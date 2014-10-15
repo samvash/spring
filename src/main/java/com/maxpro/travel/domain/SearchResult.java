@@ -2,6 +2,8 @@ package com.maxpro.travel.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -13,17 +15,17 @@ import org.hibernate.annotations.GenerationTime;
 public class SearchResult {
 
 	@Id
-	@Generated(GenerationTime.ALWAYS)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID")
-	private Integer id;
+	private Long id;
 
 	private String searchString;
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
